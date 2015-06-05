@@ -44,6 +44,26 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 
     view->rootContext()->setContextProperty("fuelpaddb", fuelpaddb);
 
+    // ************* Car Data starts here *************
+    SqlQueryModel *carmodel = new SqlQueryModel(0);
+    carmodel->setQuery("select * FROM car ORDER by year DESC");
+
+    view->rootContext()->setContextProperty("carmodel", carmodel);
+
+    // ************* Filtered Car Record Data starts here *************
+    SqlQueryModel *recordmodel = new SqlQueryModel(0);
+    recordmodel->setQuery("SELECT * from record");
+
+    QSortFilterProxyModel* recordmodelFiltered = new QSortFilterProxyModel(0);
+
+    // set existing model as the source for filtering proxy
+    recordmodelFiltered->setSourceModel(recordmodel);
+
+    // set subsequent filtering calls to operate on the second column - carid
+    recordmodelFiltered->setFilterKeyColumn(1);
+
+    view->rootContext()->setContextProperty("recordmodel", recordmodelFiltered);
+
     view->setSource(SailfishApp::pathTo("qml/harbour-fuelpad.qml"));
 
     view->show();

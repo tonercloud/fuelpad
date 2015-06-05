@@ -2,6 +2,13 @@
 <!DOCTYPE TS>
 <TS version="2.1">
 <context>
+    <name>AboutDialog</name>
+    <message>
+        <source>About Fuelpad</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>CoverPage</name>
     <message>
         <source>My Cover</source>
@@ -20,12 +27,26 @@
     </message>
     <message>
         <source>UI Template</source>
-        <translation>UI-Vorlage</translation>
+        <translation type="vanished">UI-Vorlage</translation>
     </message>
     <message>
         <source>Hello Sailors</source>
-        <translation>Hallo Matrosen</translation>
+        <translation type="vanished">Hallo Matrosen</translation>
     </message>
+</context>
+<context>
+    <name>Fuelpad</name>
+    <message>
+        <source>UI Template</source>
+        <translation type="obsolete">UI-Vorlage</translation>
+    </message>
+    <message>
+        <source>Hello Sailors</source>
+        <translation type="obsolete">Hallo Matrosen</translation>
+    </message>
+</context>
+<context>
+    <name>FuelpadPage</name>
     <message>
         <source>Settings</source>
         <translation type="unfinished"></translation>
@@ -40,6 +61,21 @@
     </message>
     <message>
         <source>About</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Data to go here</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ManageDrivers</name>
+    <message>
+        <source>Drivers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Full name:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
