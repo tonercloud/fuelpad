@@ -35,16 +35,16 @@ import Sailfish.Silica 1.0
 Page {
     id: fuelpadpage
 
-    function passcarDetails(carDetails)
-    {
-        console.log("about to push to CarRecordPage, for car - id: " +
-                     carDetails.id + ", register: " + carDetails.register)
+    // function passcarDetails(carDetails(id, mark, model, register))
+    // {
+        // console.log("about to push to CarRecordPage, for car - id: " +
+                     // carDetails.id + ", register: " + carDetails.register)
         // this is where the filtering happens - recordmodel will contain only the selected rows
-        recordmodel.setFilterFixedString(carDetails.id);
+        // recordmodel.setFilterFixedString(carDetails.id);
 
-        pageStack.push(Qt.resolvedUrl("CarRecordsPage.qml"),
-                       { carDetails : carDetails });
-    }
+        // pageStack.push(Qt.resolvedUrl("CarRecordsPage.qml"),
+                       // { carDetails : carDetails });
+    // }
 
 
     SilicaListView {
@@ -83,10 +83,10 @@ Page {
                 x: Theme.paddingLarge
                 text: mark + " " + model + " " + register
                 anchors.verticalCenter: parent.verticalCenter
-                color: delegate.highlighted ? Theme.highlightColor : Theme.primaryColor
+                color: delegate.highlighted ? Theme.highlightColor : Theme.primaryColor;
             }
-            onClicked: { passcarDetails(model);
-            }
+            // onClicked: console.log("full details : " + id + "," + mark+ "," + model+ "," + register);
+            onClicked: pageStack.push(Qt.resolvedUrl("CarRecordsPage.qml"), { fulldetails: id + "," + mark+ "," + model+ "," + register })
         }
     }
 }

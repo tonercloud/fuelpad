@@ -35,31 +35,26 @@ import Sailfish.Silica 1.0
 Page {
     id: carrecordspage
 
-    property variant carDetails
+    property var fulldetails
 
     SilicaListView {
         id: listView
-        model: 20
+        model: recordmodel
         anchors.fill: parent
         header: PageHeader {
-            title: qsTr("Nested Page")
+            title: qsTr("Car Records")
         }
         delegate: BackgroundItem {
             id: delegate
 
             Label {
                 x: Theme.paddingLarge
-                text: qsTr("Item") + " " + index
+                text: fulldetails
                 anchors.verticalCenter: parent.verticalCenter
                 color: delegate.highlighted ? Theme.highlightColor : Theme.primaryColor
             }
-            onClicked: console.log("Clicked " + index)
+            // onClicked: console.log("Clicked " + index)
         }
         VerticalScrollDecorator {}
     }
 }
-
-
-
-
-
